@@ -2,6 +2,13 @@
   "name": "ags",
   "rules": {
     "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "row"
+      }
+    },
+    "row": {
       "type": "CHOICE",
       "members": [
         {

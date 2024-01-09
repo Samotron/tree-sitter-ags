@@ -1,7 +1,9 @@
 module.exports = grammar({
   name: 'ags',
   rules : {
-    source_file: $ => choice(
+    source_file: $ => repeat($.row),
+
+    row: $ => choice(
       $.data_row,
       $.group_row,
       $.heading_row,

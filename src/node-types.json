@@ -1,6 +1,6 @@
 [
   {
-    "type": "source_file",
+    "type": "row",
     "named": true,
     "fields": {},
     "children": {
@@ -25,6 +25,21 @@
         },
         {
           "type": "unit_row",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "row",
           "named": true
         }
       ]
