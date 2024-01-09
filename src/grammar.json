@@ -1,11 +1,11 @@
 {
   "name": "ags",
   "rules": {
-    "source_file": {
+    "document": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "row"
+        "name": "group"
       }
     },
     "row": {
@@ -112,6 +112,38 @@
           }
         ]
       }
+    },
+    "group": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\"GROUP"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "heading_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unit_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type_row"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "data_row"
+          }
+        }
+      ]
     }
   },
   "extras": [

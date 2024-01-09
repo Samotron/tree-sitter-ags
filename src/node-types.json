@@ -1,18 +1,29 @@
 [
   {
-    "type": "row",
+    "type": "document",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "group",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "data_row",
-          "named": true
-        },
-        {
-          "type": "group_row",
           "named": true
         },
         {
@@ -31,19 +42,8 @@
     }
   },
   {
-    "type": "source_file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "row",
-          "named": true
-        }
-      ]
-    }
+    "type": "\"GROUP",
+    "named": false
   },
   {
     "type": "data_row",
