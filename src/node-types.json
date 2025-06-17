@@ -1,5 +1,24 @@
 [
   {
+    "type": "data_row",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_keyword",
+          "named": true
+        },
+        {
+          "type": "field_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "document",
     "named": true,
     "fields": {},
@@ -8,7 +27,26 @@
       "required": false,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "group",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "quoted_field",
           "named": true
         }
       ]
@@ -27,6 +65,10 @@
           "named": true
         },
         {
+          "type": "group_row",
+          "named": true
+        },
+        {
           "type": "heading_row",
           "named": true
         },
@@ -42,27 +84,130 @@
     }
   },
   {
-    "type": "\"GROUP",
-    "named": false
-  },
-  {
-    "type": "data_row",
-    "named": true
-  },
-  {
     "type": "group_row",
-    "named": true
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "group_keyword",
+          "named": true
+        },
+        {
+          "type": "quoted_field",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "heading_row",
-    "named": true
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_list",
+          "named": true
+        },
+        {
+          "type": "heading_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_field",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "field_content",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "type_row",
-    "named": true
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_list",
+          "named": true
+        },
+        {
+          "type": "type_keyword",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "unit_row",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_list",
+          "named": true
+        },
+        {
+          "type": "unit_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "data_keyword",
+    "named": true
+  },
+  {
+    "type": "field_content",
+    "named": true
+  },
+  {
+    "type": "group_keyword",
+    "named": true
+  },
+  {
+    "type": "heading_keyword",
+    "named": true
+  },
+  {
+    "type": "type_keyword",
+    "named": true
+  },
+  {
+    "type": "unit_keyword",
     "named": true
   }
 ]

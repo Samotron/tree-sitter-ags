@@ -1,0 +1,136 @@
+# Test cases for AGS parser
+
+===============================================================================
+Basic group structure
+===============================================================================
+
+"GROUP","PROJ"
+"HEADING","PROJ_ID","PROJ_NAME"
+"UNIT","",""
+"TYPE","X","X"
+"DATA","001","Test Project"
+
+---
+
+(document
+  (group
+    (group_row
+      (group_keyword)
+      (quoted_field
+        (field_content)))
+    (heading_row
+      (heading_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (unit_row
+      (unit_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (type_row
+      (type_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (data_row
+      (data_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))))
+
+===============================================================================
+Fields with embedded commas
+===============================================================================
+
+"GROUP","TEST"
+"HEADING","FIELD1","FIELD2"
+"UNIT","",""
+"TYPE","X","X"
+"DATA","Test, with comma","Normal field"
+
+---
+
+(document
+  (group
+    (group_row
+      (group_keyword)
+      (quoted_field
+        (field_content)))
+    (heading_row
+      (heading_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (unit_row
+      (unit_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (type_row
+      (type_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))
+    (data_row
+      (data_keyword)
+      (field_list
+        (quoted_field
+          (field_content))
+        (quoted_field
+          (field_content))))))
+
+===============================================================================
+Comments
+===============================================================================
+
+# This is a comment
+"GROUP","PROJ"
+"HEADING","PROJ_ID"
+"UNIT",""
+"TYPE","X"
+"DATA","001"
+
+---
+
+(document
+  (comment)
+  (group
+    (group_row
+      (group_keyword)
+      (quoted_field
+        (field_content)))
+    (heading_row
+      (heading_keyword)
+      (field_list
+        (quoted_field
+          (field_content))))
+    (unit_row
+      (unit_keyword)
+      (field_list
+        (quoted_field
+          (field_content))))
+    (type_row
+      (type_keyword)
+      (field_list
+        (quoted_field
+          (field_content))))
+    (data_row
+      (data_keyword)
+      (field_list
+        (quoted_field
+          (field_content))))))

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AGS File Schema",
+  "description": "Schema for validating AGS (Association of Geotechnical and Geoenvironmental Specialists) data files",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "enum": ["AGS3", "AGS4", "AGS4.1"],
+      "description": "AGS format version"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/group"
+      }
+    }
+  },
+  "definitions": {
+    "group": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "description": "Group name (uppercase, alphanumeric with underscores)"
+        },
+        "headings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          }
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/dataType"
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": ["name", "headings", "units", "types"]
+    },
+    "dataType": {
+      "type": "string",
+      "enum": [
+        "X", "ID", "PA", "DT", "YN", "0DP", "1DP", "2DP", "3DP", 
+        "XN", "T", "MC", "U", "PT", "PU", "RL", "DMS"
+      ],
+      "description": "AGS data type codes"
+    }
+  }
+}

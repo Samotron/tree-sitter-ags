@@ -1,2 +1,8 @@
 example-file
 test-ags.ags
+*.ags
+!example/simple.ags
+
+target/
+
+node_modules/
